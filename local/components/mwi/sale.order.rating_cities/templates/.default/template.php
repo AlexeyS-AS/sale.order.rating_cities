@@ -23,9 +23,9 @@ if (empty($arResult['ITEMS'])) return;
                 <span class="sale-order-rating-cities-item-name">
                     <?= $arItem['NAME'] ?>
                 </span>
-                <?php if ($arItem['WEIGHT'] > 0): ?>
+                <?php if ($arItem['WEIGHT'] > 100): ?>
                     <span class="sale-order-rating-cities-item-weight">
-                        <?= ($arItem['WEIGHT'] / 1000) ?>
+                        <?= (round($arItem['WEIGHT']/1000*100)/100) ?>
                         <?= Loc::getMessage('SOR_CITIES_WEIGHT_KG') ?>
                     </span>
                 <?php endif; ?>

@@ -11,11 +11,11 @@ if (!Loader::IncludeModule("sale")) {
 }
 
 // Проверка и инициализация входных параметров
-$arParams['PERSON_TYPE_ID'] = (!empty($arParams['PERSON_TYPE_ID']) ? intval($arParams['PERSON_TYPE_ID']) : 0);
+$arParams['PERSON_TYPE_ID'] = (!empty($arParams['PERSON_TYPE_ID']) ? $arParams['PERSON_TYPE_ID'] : 0);
 $arParams['PERIOD'] = ($arParams['PERIOD'] ?: 'LAST_WEEK');
 $arParams['STATUS_ID'] = ($arParams['STATUS_ID'] ?: '');
 $arParams['PAYED'] = ($arParams['PAYED'] ?: '');
-$arParams['LIMIT'] = (!empty($arParams['LIMIT']) ? intval($arParams['LIMIT']) : 10);
+$arParams['COUNT'] = (!empty($arParams['COUNT']) ? intval($arParams['COUNT']) : 10);
 
 if ($this->StartResultCache()) {
     
@@ -92,7 +92,7 @@ if ($this->StartResultCache()) {
             ),
         ],
         'order' => ['WEIGHT' => 'DESC'],
-        'limit' => ($arParams['LIMIT'] > 0 ? $arParams['LIMIT'] : 10),
+        'limit' => ($arParams['COUNT'] > 0 ? $arParams['COUNT'] : 10),
     ]);
     
     while ($arItem = $dbRes->fetch()) {

@@ -6,7 +6,10 @@ $arComponentDescription = array(
 	"DESCRIPTION" => GetMessage("SOR_CITIES_TEMPLATE_DESCRIPTION"),
 	"ICON" => "/images/icon.gif",
 	"PATH" => array(
-        "ID" => "sale_order",
-        "NAME" => GetMessage("SOR_NAME")
+        "ID" => "e-store",
+        "CHILD" => array(
+            "ID" => "sale_order_rating",
+            "NAME" => GetMessage("SOR_NAME"),
+        )
 	),
 );
