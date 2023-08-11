@@ -1,16 +1,18 @@
 # sale.order.rating_cities
-Bitrix Order ORM. 
-Вывод рейтинга городов, куда были отправлены заказы
+Bitrix Order ORM.
+## Вывод топ городов, куда были отправлены заказы. Учет по весу заказа.
 
-Вызов
+**Вызов**
 
-``<?$APPLICATION->IncludeComponent("mwi:sale.order.rating_cities", "", Array(
-        'TITLE' => 'Сорта недели:',
-        'PERSON_TYPE_ID' => 2,
+````
+<?$APPLICATION->IncludeComponent("mwi:sale.order.rating_cities", "", Array(
+        'TITLE' => 'Города недели:',
+        'PERSON_TYPE_ID' => [1],
         'PERIOD' =>  'LAST_WEEK',
-        'STATUS_ID' => [],
-        'PAYED' => '',
+        'STATUS_ID' => ['F'],
+        'PAYED' => 'Y',
+        'COUNT' => 10,
     ),
     false
 );?>
-``
+````
